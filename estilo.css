@@ -115,6 +115,12 @@ h2{
 	width: 200px;
 }
 
+.menu{
+	display: flex;
+	list-style: none;
+    margin: 0;
+}
+
 .link-menu{	margin: 0 10px;}
 
 .link-menu:hover{
@@ -193,12 +199,43 @@ figure.imagens.portfolio {
 
 /* paralax */
 @media only screen and (max-width: 790px){
-	.header::before, .header{height: 550px;}
+	.header::before, 
+	.header{
+		height: 550px;
+	}
 }
 
 /* menu */
+label[for="menu-responsivo"], 
+#menu-responsivo{
+	display: none;
+}
+
 @media only screen and (max-width: 520px){
 	.menu{
-		display: none;
+		display: flex;
+	    flex-direction: column;
+	    color: #000;
+	    height: 100px;
+	    justify-content: space-between;
+	    align-items: flex-end;
 	}
+
+	.link-menu{	margin: 0; }
+
+	nav{
+		position: absolute;
+		right: -100%;
+		margin-top: 35px;
+		transition: all .5s;
+	}
+
+	label[for="menu-responsivo"]{
+		display: block;
+		position: absolute;
+    	right: 4%;
+    	color: #fff;
+	}
+
+	#menu-responsivo:checked ~ nav{	right: 4%; }
 }
