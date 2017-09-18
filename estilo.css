@@ -1,0 +1,204 @@
+/* estilos gerais*/
+body, html{
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	color: #212121;
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+hr{
+    border-width: 0;
+    margin: 0;
+}
+
+h2{
+	margin: 40px;
+}
+
+.header,
+.tecnologias,
+.portfolio{
+	max-width: 1200px;
+	width: 96%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.background,
+.footer{
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+}
+
+#portfolio,
+#tecnologias{
+	overflow: auto;
+	background: #fff;
+}
+
+.subtitulo{
+	font-weight: normal;
+	font-size: 20px;
+}
+/*estilo de imagens*/
+.imagens{
+	width: 15%;
+	margin: 30px 5%;
+	position: relative;
+}
+
+.imagens img{
+	width: 100%;
+	height: 100%;	
+}
+
+.imagens figcaption{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
+    color: #fff;
+}
+
+.imagens::before{
+	width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    content: "";    
+    position: absolute;
+    display: none;
+}
+
+.imagens:hover figcaption,
+.imagens:hover::before{
+	display: block;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 700px;
+    margin-top: 40px;
+}
+
+.header::before{
+	background-image: url('imagens/background.png');
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+    height: 700px;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.logo{
+	display: block;
+	margin: 0px;
+}
+
+.imagem-logo{
+	display: block;
+	width: 200px;
+}
+
+.link-menu{	margin: 0 10px;}
+
+.link-menu:hover{
+	text-decoration: underline;
+	color: #fff;
+}
+
+.link-menu:last-child{ margin-right: 0px;}
+
+/* portfolio */
+#portfolio h2{
+	margin-bottom: 10px;
+}
+
+figure.imagens.portfolio {
+    width: 40%;
+    position: relative;
+    float: left;
+}
+
+/* tecnologias */
+.tecnologias{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* footer */
+.footer{
+	background-color: #000;
+	padding: 15px;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 14px;
+}
+
+.footer h3{ margin: 15px;}
+
+.footer p{ margin: 5px auto;}
+
+/* Responsivo */
+/* tecnologias */
+@media only screen and (max-width: 790px){
+	.imagens.tecnologias{
+		width: 30%;
+		margin: 20px 10%;
+	}
+}
+
+@media only screen and (max-width: 400px){
+	.tecnologias{
+		flex-direction: column;
+	}
+
+	.imagens.tecnologias{
+		width: 50%;
+		margin: 20px auto;
+	}
+}
+
+/* projetos */
+@media only screen and (max-width: 850px){
+	.portfolio{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.portfolio a{
+		width: 80%;
+		margin: 20px auto;
+	}
+
+	figure.imagens.portfolio{
+		width: 100%
+	}
+}
+
+/* paralax */
+@media only screen and (max-width: 790px){
+	.header::before, .header{height: 550px;}
+}
+
+/* menu */
+@media only screen and (max-width: 520px){
+	.menu{
+		display: none;
+	}
+}
