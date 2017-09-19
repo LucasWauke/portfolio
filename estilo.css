@@ -21,7 +21,10 @@ hr{
     margin: 0;
 }
 
-h2 { margin: 30px; }
+h2 {
+	font-size: 2em;
+	letter-spacing: 1px;
+}
 
 .header,
 .tecnologias,
@@ -42,16 +45,14 @@ h2 { margin: 30px; }
 
 #portfolio,
 #tecnologias{
-	overflow: auto;	
-}
-
-#portfolio{
-	background: #fff;  
+	overflow: auto;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .subtitulo{
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 1.75em;
+	margin: 50px auto;
 }
 
 /* 
@@ -78,7 +79,7 @@ h2 { margin: 30px; }
     font-size: 25px;
     font-weight: bold;
     opacity: 0; 
-    color: #fff;
+    color: #FAFAFA;
 }
 
 .imagens::before{
@@ -143,7 +144,7 @@ h2 { margin: 30px; }
 
 .link-menu:hover{
 	text-decoration: underline;
-	color: #fff;
+	color: #FAFAFA;
 }
 
 .link-menu:last-child{ margin-right: 0px;}
@@ -158,15 +159,18 @@ label[for="menu-responsivo"],
 		portfolio
    ---------------------
 */
+#portfolio{	background: #fff; }
+
 #portfolio h2{
-	margin-bottom: 10px; 
-	letter-spacing: 2px;
+	margin: 80px;
 }
 
 figure.imagens.portfolio {
     width: 40%;
     position: relative;
     float: left;
+    margin-top: 0;
+    margin-bottom: 60px;
 }
 
 .imagens.portfolio img{ border-radius: 10px; }
@@ -180,12 +184,22 @@ figure.imagens.portfolio {
 	background: #ffffff url(imagens/background-tecnologias.jpg) no-repeat center top;
 	background-attachment: fixed;
 	background-size: cover;
-	color: #fff;
+	color: #FAFAFA;
+}
+
+#tecnologias h2{
+	margin: 0;
+	padding: 80px;
+	background: #000;
 }
 
 .tecnologias{
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.tecnologias:last-of-type{
+	margin-bottom: 40px;
 }
 
 #tecnologias .imagens img{
@@ -211,7 +225,7 @@ figure.imagens.portfolio {
 	background-color: #000;
 	padding: 30px 0;
 	box-sizing: border-box;
-	color: #fff;
+	color: #FAFAFA;
 	font-size: 14px;
 }
 
@@ -259,7 +273,7 @@ figure.imagens.portfolio {
 		display: block;
 		position: absolute;
     	right: 4%;
-    	color: #fff;
+    	color: #FAFAFA;
 	}
 
 	#menu-responsivo:checked ~ nav{	right: 4%; }
