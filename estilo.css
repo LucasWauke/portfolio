@@ -16,6 +16,8 @@ a{
 	color: inherit;
 }
 
+a:hover{text-decoration: underline;}
+
 hr{
     border-width: 0;
     margin: 0;
@@ -143,7 +145,6 @@ h2 {
 .link-menu{	margin: 0 10px;}
 
 .link-menu:hover{
-	text-decoration: underline;
 	color: #FAFAFA;
 }
 
@@ -161,9 +162,7 @@ label[for="menu-responsivo"],
 */
 #portfolio{	background: #fff; }
 
-#portfolio h2{
-	margin: 80px;
-}
+#portfolio h2{ margin: 80px; }
 
 figure.imagens.portfolio {
     width: 40%;
@@ -198,9 +197,7 @@ figure.imagens.portfolio {
 	flex-wrap: wrap;
 }
 
-.tecnologias:last-of-type{
-	margin-bottom: 40px;
-}
+.tecnologias:last-of-type{ margin-bottom: 40px; }
 
 #tecnologias .imagens img{
 	max-width: 150px;
