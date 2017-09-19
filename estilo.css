@@ -185,7 +185,7 @@ figure.imagens.portfolio {
 	background-size: cover;
 	color: #FAFAFA;
 	position: relative;
-}
+}/*
 
 #tecnologias::before{
 	display: block;
@@ -200,7 +200,7 @@ figure.imagens.portfolio {
 #tecnologias::before{
 	z-index: -1;
 }
-
+*/
 #tecnologias h2{
 	margin: 0;
 	padding: 80px;
