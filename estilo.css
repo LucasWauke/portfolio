@@ -1,4 +1,8 @@
-/* estilos gerais*/
+/* 
+   ----------------
+	estilos gerais
+   ----------------
+*/
 body, html{
 	padding: 0;
 	margin: 0;
@@ -17,9 +21,7 @@ hr{
     margin: 0;
 }
 
-h2{
-	margin: 40px;
-}
+h2 { margin: 30px; }
 
 .header,
 .tecnologias,
@@ -39,15 +41,23 @@ h2{
 
 #portfolio,
 #tecnologias{
-	overflow: auto;
-	background: #fff;
+	overflow: auto;	
+}
+
+#portfolio{
+	background: #fff;  
 }
 
 .subtitulo{
 	font-weight: normal;
 	font-size: 20px;
 }
-/*estilo de imagens*/
+
+/* 
+   ---------------------
+	estilo de imagens
+   ---------------------
+*/
 .imagens{
 	width: 15%;
 	margin: 30px 5%;
@@ -66,7 +76,7 @@ h2{
     transform: translate(-50%, -50%);
     font-size: 25px;
     font-weight: bold;
-    display: none;
+    opacity: 0; 
     color: #fff;
 }
 
@@ -76,15 +86,25 @@ h2{
     background-color: rgba(0,0,0,0.8);
     content: "";    
     position: absolute;
-    display: none;
+    opacity: 0;    
+    border-radius: 10px;
 }
 
-.imagens:hover figcaption,
-.imagens:hover::before{
-	display: block;
+/* efeito hover - so para desk */
+@media only screen and (min-width: 790px){
+	.imagens:hover figcaption,
+	.imagens:hover::before{
+		opacity: 1;
+		transition: all .6s;
+	}
 }
 
-/* header */
+/* 
+   --------
+	header 
+   -------- 
+*/
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -92,6 +112,7 @@ h2{
     margin-top: 40px;
 }
 
+/* background */
 .header::before{
 	background-image: url('imagens/background.png');
     background-size: cover;
@@ -105,16 +126,12 @@ h2{
     z-index: -1;
 }
 
-.logo{
-	display: block;
-	margin: 0px;
-}
+/* logo */
+.logo{ margin: 0px; }
 
-.imagem-logo{
-	display: block;
-	width: 200px;
-}
+.imagem-logo{ width: 200px; }
 
+/* menu */
 .menu{
 	display: flex;
 	list-style: none;
@@ -130,9 +147,19 @@ h2{
 
 .link-menu:last-child{ margin-right: 0px;}
 
-/* portfolio */
+label[for="menu-responsivo"], 
+#menu-responsivo{
+	display: none;
+}
+
+/* 
+   ---------------------
+		portfolio
+   ---------------------
+*/
 #portfolio h2{
-	margin-bottom: 10px;
+	margin-bottom: 10px; 
+	letter-spacing: 2px;
 }
 
 figure.imagens.portfolio {
@@ -141,13 +168,44 @@ figure.imagens.portfolio {
     float: left;
 }
 
-/* tecnologias */
+.imagens.portfolio img{ border-radius: 10px; }
+
+/* 
+   ---------------------
+		tecnologias
+   ---------------------
+*/
+#tecnologias{
+	background: #ffffff url(imagens/background-tecnologias.png) no-repeat center top;
+	background-attachment: fixed;
+	background-size: cover;
+	color: #fff;
+}
+
 .tecnologias{
 	display: flex;
 	flex-wrap: wrap;
 }
 
-/* footer */
+#tecnologias .imagens img{
+	max-width: 150px;
+	display: block;
+	margin: 0 auto;
+}
+
+.tecnologias figcaption{ font-size: 20px;}
+
+.imagens.tecnologias::before{
+	width: 120%;
+	height: 120%;
+	transform: translate(-10%,-10%);
+}
+
+/* 
+   ---------------------
+		footer
+   ---------------------
+*/
 .footer{
 	background-color: #000;
 	padding: 15px;
@@ -160,59 +218,40 @@ figure.imagens.portfolio {
 
 .footer p{ margin: 5px auto;}
 
-/* Responsivo */
-/* tecnologias */
+/* 
+   ---------------------
+		Responsivo
+   ---------------------
+*/	
+
 @media only screen and (max-width: 790px){
+	/* imagens */
 	.imagens.tecnologias{
 		width: 30%;
 		margin: 20px 10%;
 	}
-}
 
-@media only screen and (max-width: 400px){
-	.tecnologias{
-		flex-direction: column;
+	.imagens figcaption{
+		position: relative;
+	    transform: none;
+	    opacity: 1;
+	    margin-top: 20px;
+	    top: initial;
+	    left: initial;
+	    margin: 20px auto 0 auto;
+	    font-size: 20px;
 	}
 
-	.imagens.tecnologias{
-		width: 50%;
-		margin: 20px auto;
-	}
-}
+	#portfolio figcaption{ color: #000;	}
 
-/* projetos */
-@media only screen and (max-width: 850px){
-	.portfolio{
-		display: flex;
-		flex-direction: column;
-	}
-
-	.portfolio a{
-		width: 80%;
-		margin: 20px auto;
-	}
-
-	figure.imagens.portfolio{
-		width: 100%
-	}
-}
-
-/* paralax */
-@media only screen and (max-width: 790px){
+	/* parallax */
 	.header::before, 
 	.header{
 		height: 550px;
 	}
-}
 
-/* menu */
-label[for="menu-responsivo"], 
-#menu-responsivo{
-	display: none;
-}
-
-@media only screen and (max-width: 520px){
-	.menu{
+	/* menu */
+		.menu{
 		display: flex;
 	    flex-direction: column;
 	    color: #000;
@@ -238,4 +277,34 @@ label[for="menu-responsivo"],
 	}
 
 	#menu-responsivo:checked ~ nav{	right: 4%; }
+}
+
+/* ajuste no tamanho da fonte */
+@media only screen and (max-width: 520px){
+	.imagens figcaption{ font-size: 16px; }
+}
+
+/* coluna de tecnologias*/
+@media only screen and (max-width: 400px){
+	.tecnologias{ flex-direction: column; }
+
+	.imagens.tecnologias{
+		width: 50%;
+		margin: 20px auto;
+	}
+}
+
+/* coluna de projetos */
+@media only screen and (max-width: 850px){
+	.portfolio{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.portfolio a{
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	figure.imagens.portfolio{ width: 100% }
 }
