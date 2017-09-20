@@ -9,7 +9,6 @@ body, html{
 	font-family: 'Roboto', sans-serif;
 	color: #212121;
 	text-align: center;
-	/*width: 100%;*/
 	overflow-x: hidden;
 }
 
@@ -84,25 +83,6 @@ h2 {
     font-weight: bold;
     opacity: 0; 
     color: #FAFAFA;
-}
-
-.imagens::before{
-	width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    content: "";    
-    position: absolute;
-    opacity: 0;    
-    border-radius: 10px;
-}
-
-/* efeito hover - so para desk */
-@media only screen and (min-width: 790px){
-	.imagens:hover figcaption,
-	.imagens:hover::before{
-		opacity: 1;
-		transition: all .6s;
-	}
 }
 
 /* 
@@ -187,22 +167,8 @@ figure.imagens.portfolio {
 	background-size: cover;
 	color: #FAFAFA;
 	position: relative;
-}/*
-
-#tecnologias::before{
-	display: block;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.3);
-    position: absolute;
 }
 
-#tecnologias,
-#tecnologias::before{
-	z-index: -1;
-}
-*/
 #tecnologias h2{
 	margin: 0;
 	padding: 80px;
@@ -223,12 +189,6 @@ figure.imagens.portfolio {
 }
 
 .tecnologias figcaption{ font-size: 20px;}
-
-.imagens.tecnologias::before{
-	width: 120%;
-	height: 120%;
-	transform: translate(-10%,-10%);
-}
 
 /* 
    ---------------------
@@ -298,8 +258,8 @@ figure.imagens.portfolio {
 		position: relative;
 	    transform: none;
 	    opacity: 1;
-	    top: initial;
-	    left: initial;
+	    top: auto;
+	    left: auto;
 	    margin: 20px auto 0 auto;
 	    font-size: 20px;
 	}
@@ -349,4 +309,73 @@ figure.imagens.portfolio {
 	}
 
 	figure.imagens.portfolio{ width: 100% }
+}
+
+/* so para desk */
+@media only screen and (min-width: 790px){
+	/*efeito hover*/
+	.imagens:hover figcaption,
+	.imagens:hover::before{
+		opacity: 1;
+		transition: all .6s;
+	}
+
+	.imagens.tecnologias::before{
+		width: 120%;
+		height: 120%;
+		transform: translate(-10%,-10%);
+	}
+
+	.imagens::before{
+		width: 100%;
+	    height: 100%;
+	    background-color: rgba(0,0,0,0.8);
+	    content: "";    
+	    position: absolute;
+	    opacity: 0;    
+	    border-radius: 10px;
+	}
+}
+
+/* 
+   ---------------------
+	  cross-browser
+   ---------------------
+*/	
+
+/* Internet explorer */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+	/* ajuste logo */
+	:root .header, .header{ position: relative; }
+
+	:root .logo,
+	.logo{
+		position: absolute;
+		left: 0;
+	}
+
+	/* adiciona background titulo projetos */
+	#portfolio h2{
+		margin: 0 auto 80px auto;
+		padding: 80px;
+		background: #000;
+		color: #FAFAFA
+	}
+
+	/* ajusta layout geral */
+	#portfolio, 
+	#tecnologias,
+	:root #portfolio,
+	:root #tecnologias{ 
+		width: 100%;
+	}
+
+	/*ajusta imagens */
+	.imagens img,
+	:root .imagens img{
+		display: inline;
+		width: auto;
+		height: auto;
+	}
 }
