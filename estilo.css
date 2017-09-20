@@ -378,4 +378,13 @@ figure.imagens.portfolio {
 		width: auto;
 		height: auto;
 	}
+
+	@media only screen and (min-width: 790px){
+		.imagens img,
+		:root .imagens img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 }
