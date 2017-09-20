@@ -335,6 +335,10 @@ figure.imagens.portfolio {
 	    opacity: 0;    
 	    border-radius: 10px;
 	}
+
+	#portfolio .imagens::before{
+		height: calc(100% - 4.6px);
+	}
 }
 
 /* 
