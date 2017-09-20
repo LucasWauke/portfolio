@@ -380,12 +380,10 @@ figure.imagens.portfolio {
 	}
 }
 
-@media only screen and (min-width: 790px){
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		.imagens img,
-		:root .imagens img{
-			width: 100%;
-			height: 100%;
-		}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 790px) {
+	.imagens img,
+	:root .imagens img{
+		width: 100%;
+		height: 100%;
 	}
 }
