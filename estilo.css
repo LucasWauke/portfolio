@@ -247,6 +247,8 @@ figure.imagens.portfolio {
 	justify-content: space-around;
 	width: 96%;
 	max-width: 1200px;
+	padding: 0;
+	margin: 0 auto;
 }
 
 /* 
@@ -256,12 +258,6 @@ figure.imagens.portfolio {
 */	
 
 @media only screen and (max-width: 790px){
-	/* parallax */
-	.header::before, 
-	.header{
-		height: 550px;
-	}
-
 	/* menu */
 		.menu{
 		display: flex;
