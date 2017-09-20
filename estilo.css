@@ -9,6 +9,8 @@ body, html{
 	font-family: 'Roboto', sans-serif;
 	color: #212121;
 	text-align: center;
+	/*width: 100%;*/
+	overflow-x: hidden;
 }
 
 a{
@@ -259,7 +261,7 @@ figure.imagens.portfolio {
 
 @media only screen and (max-width: 790px){
 	/* menu */
-		.menu{
+	.menu{
 		display: flex;
 	    flex-direction: column;
 	    color: #000;
@@ -296,13 +298,18 @@ figure.imagens.portfolio {
 		position: relative;
 	    transform: none;
 	    opacity: 1;
-	    margin-top: 20px;
 	    top: initial;
 	    left: initial;
 	    margin: 20px auto 0 auto;
 	    font-size: 20px;
 	}
 
+	/*tecnologias*/
+	figure.tecnologias{
+		flex-direction: column;
+	}
+
+	/*projetos*/
 	#portfolio figcaption{ color: #000;	}
 
 	/* footer */
