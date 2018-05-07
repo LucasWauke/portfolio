@@ -96,7 +96,7 @@ h2 {
 .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 700px;
+    margin-bottom: calc(100vh - 83px);
     margin-top: 40px;
 }
 
@@ -106,7 +106,7 @@ h2 {
     background-size: cover;
     width: 100%;
     position: fixed;
-    height: 700px;
+    height: 100vh;
     display: block;
     content: "";
     top: 0;
