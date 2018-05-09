@@ -50,7 +50,7 @@ h2 {
 
 #portfolio,
 #tecnologias{
-	overflow: auto;
+	overflow: hidden;
 	font-family: 'Noto Sans', sans-serif;
 }
 
